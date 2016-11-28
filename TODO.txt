@@ -1,0 +1,5 @@
+Scripts:
+- Deleting/changing a file should update dev_build
+
+HTML:
+- How to handle? Should there be a views folder or more general?
