@@ -17,6 +17,31 @@
             "taskName": "scripts",
 			"isBuildCommand": true,
 			"showOutput": "always"
+        },
+        {
+            "taskName": "serve",
+			"isBuildCommand": true,
+			"showOutput": "always"
+        },
+        {
+            "taskName": "styles",
+			"isBuildCommand": true,
+			"showOutput": "always"
+        },
+        {
+            "taskName": "views",
+			"isBuildCommand": true,
+			"showOutput": "always"
+        },
+        {
+            "taskName": "build:dev",
+			"isBuildCommand": true,
+			"showOutput": "always"
+        },
+        {
+            "taskName": "clean-dev",
+            "isBuildCommand": true,
+            "showOutput": "always"
         }
     ]
 }

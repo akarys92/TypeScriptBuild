@@ -85,3 +85,32 @@ gulp.task('watch', function () {
   gulp.watch('src/index.html', ['index', 'inject']);
   gulp.watch(DESTINATION + '*').on('change', bs.reload);
 });
+
+
+
+glob('**/*.js', {cwd: DEV_LOC}, function(err, destination_files){
+		if (err) {
+			throw err;
+		}
+		else {
+			var destination_map = destination_files.map(function(obj){
+				return obj.replace(".js", ".ts");
+			});
+			glob('**/*.ts', {cwd: SOURCE}, function(err, source_files){
+				//Get list of destination files, get list of source files
+				//Go throught the list of destination files and check if it is in source
+				//  if it is, cntinue
+				//  else, add its path to the delete array
+				var to_delete = [];
+				for(var index in destination_map) {
+					var js_path = destination_map[index];
+					var index = source_files.indexOf(js_path);
+					if(index === -1) {
+						js_path = js_path.replace(".ts", ".js");
+						to_delete.push(js_path);
+					}
+				}
+				delete_files(to_delete);
+			});
+		}
+	});
