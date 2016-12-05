@@ -1,6 +1,2 @@
-HTML:
-- How to handle? Should there be a views folder or more general?
-
-
 Notes:
-- RIght now all scripts have to be in the scripts folder...
+- Right now all scripts have to be in the scripts folder...
